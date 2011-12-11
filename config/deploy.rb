@@ -15,7 +15,7 @@ set :scm_passphrase, "dogdogdoggg"
 set :branch, "master"
 set :deploy_via, :remote_cache
 set :deploy_to, "/var/www/13nian"
-server "oo-oo.me", :app, :web, :db, :primary => true
+server "13nian.com", :app, :web, :db, :primary => true
 
 unless Capistrano::Configuration.respond_to?(:instance)
   abort "This extension requires Capistrano 2"
