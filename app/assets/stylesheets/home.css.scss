@@ -1,0 +1,39 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "blueprint/fancy-type";
+@import "blueprint/grid";
+@import "blueprint/scaffolding";
+@import "blueprint/ie";
+@import "blueprint/buttons";
+@import "blueprint/form";
+@import "compass/layout/grid-background";
+@import "compass/css3/border-radius";
+@include fancy-type;
+@include blueprint-grid;
+@include blueprint-scaffolding;
+@include blueprint-ie;
+@include blueprint-form;
+button{
+  @include button-button;
+  @include button-colors;
+  @include button-hover-colors;
+  @include button-active-colors;
+}
+a.button{
+  @include button-button;
+  @include button-colors;
+  @include button-hover-colors;
+  @include button-active-colors;
+}
+a.positive, button.positive{
+  color: #529214;
+  @include button-hover-colors(#529214, #E6EFC2, #C6D880);
+  @include button-active-colors(#FFF, #529214, #529214);
+}
+
+a.negative, button.negative{
+  color: #D12F19;
+  @include button-hover-colors(#D12F19, #FBE3E4, #FBC2C4);
+  @include button-active-colors(#FFF, #D12F19, #D12F19);
+}

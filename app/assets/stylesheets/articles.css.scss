@@ -1,0 +1,53 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "compass/typography/links/link-colors";
+.ishinfo{
+  padding-bottom: 0.75em;
+  margin: 1em 0 0.75em;
+  border-bottom: 1px dashed #B2B2B2;
+}
+.item {
+  padding:0 10px;
+  h3.title{
+    font-size:1.66em;
+  }
+
+  a{
+    @include link-colors(#A24355, black, black, #A24355, black); 
+    &:hover{
+      background: darken(#FBFAF4,10%);
+      border-bottom:1px solid darken(#FBFAF4, 70%);
+    }
+  }
+
+  h4.byline a{
+    color:#88A81A;
+    font-weight:bold;
+  }
+  p{
+    text-align:left;
+    margin:0.5em 0 1.5em;
+    font-size:0.88em;
+    text-indent:2em;
+    line-height:1.5em;
+  }
+  blockquote.style1 {
+    font: 14px/20px italic Times, serif;
+    padding: 8px;
+    background-color: lighten(#faebbc, 15%);
+    border-top: 1px solid #e1cc89;
+    border-bottom: 1px solid #e1cc89;
+    margin: 5px 0;
+    background-image: url(openquote1.gif);
+    background-position: top left;
+    background-repeat: no-repeat;
+    text-indent: 23px;
+    }
+    blockquote.style1 span {
+      display: block;
+      background-image: url(closequote1.gif);
+      background-repeat: no-repeat;
+      background-position: bottom right;
+  }
+}

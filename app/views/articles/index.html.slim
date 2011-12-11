@@ -1,0 +1,18 @@
+.container#main
+  .span-13.colborder#content.prepend-3
+    - @articles.each do |article|
+      h2.ishinfo
+        span.ishdata=article.created_at.strftime("%Y年 %m月 %d日")
+      .item
+        h3.title= link_to article.title, article_url(article)
+        h4.byline 
+          |by   
+          =link_to article.user.name, user_url(article.user)
+          blockquote.style1
+            span=article.digest
+          .content
+            == article.content
+          hr
+          = link_to 'New Article', new_article_path, :class => "button positive"
+  .span-4.append-3.last
+    h2 test

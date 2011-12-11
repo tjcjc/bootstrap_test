@@ -1,0 +1,17 @@
+@import "blueprint/reset";
+@import "blueprint/colors";
+@import "compass/typography/links/link-colors";
+$link-color:         #88A81A;
+$link-hover-color:   #88A81A;
+$link-focus-color:   $link-color;
+$link-active-color:  $link-color;
+$link-visited-color: $link-color;
+@mixin green_link{
+@include link-colors($link-color, $link-hover-color, $link-active-color, $link-visited-color, $link-focus-color); 
+}
+a{ text-decoration: none; color:black}
+<% ["articles", "about"].each do |c| %>
+  body.<%= c %> #navbar #<%= c %> a{@include green_link;
+        background:url("navbarlinkbg.gif") top left repeat-x;
+}
+<% end %>

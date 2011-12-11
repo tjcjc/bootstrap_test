@@ -1,0 +1,67 @@
+@import "blueprint/grid";
+@import "blueprint/debug";
+@include blueprint-debug;
+#navbar{
+  height:2.4em;
+  background: #FBFAF4;
+  border-top: 5px solid #333;
+  font: 18px Georgia, Times, serif;
+  overflow: hidden;
+  min-width: 750px;
+  border-top-color:#A24355;
+  li{
+    float:left;
+    padding:0 23px 0 13px;
+    margin-right:5px;
+    background:url("diamond-black.gif") 100% 66% no-repeat;
+    list-style:none;
+    a{
+      display: block;
+      padding: 0.75em 0 0.25em;
+      text-transform: uppercase;
+      &:hover{
+        background:url("navbarlinkbg.gif") top left repeat-x;
+      }
+    }
+  }
+  #feed{
+    background:none;
+  }
+}
+#masthead {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 72px;
+}
+#ish {
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid #666;
+  font: bold 10px Arial, sans-serif;
+  letter-spacing: 1px;
+}
+#footer{
+  clear: both;
+  border: 1px solid #666;
+  border-width: 1px 0;
+  margin-bottom: 3em;
+  font-size: 0.85em;
+  background: #FBFAF4 url(footer.gif) 20px 50% no-repeat;
+  p{
+    margin-left: 200px;
+    padding: 1em 20px;
+    border-left: 1px solid #666;
+    background: white;
+    span.issn{
+      font: 0.9em Verdana, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.33em;
+    }
+    span.copyright{
+      padding-left: 25px;
+      background: url(diamond-black.gif) 10px 50% no-repeat;
+    }
+      
+  }
+}

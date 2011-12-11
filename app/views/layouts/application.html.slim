@@ -1,0 +1,29 @@
+DOCTYPE html
+html
+  head
+    title Compass
+    = stylesheet_link_tag    "application" 
+    = javascript_include_tag "application" 
+    = csrf_meta_tags 
+  body{class=params[:controller]}
+    ul#navbar
+      .container
+        .prepend-3
+          li#articles = link_to "ARTICLES", articles_url
+          li#articles = link_to "ARTICLES", articles_url
+          li#articles = link_to "ARTICLES", articles_url
+          li#articles = link_to "ARTICLES", articles_url
+          li#feed = link_to "ARTICLES", articles_url
+    #ish
+      span
+    h1#masthead
+      =link_to image_tag("alalogo.gif"), root_url
+    = yield 
+    #footer
+      p
+        span.issn
+          |ISSN:0724
+        span.copyright
+          |2008-2011 @xiaofushi
+          
+
