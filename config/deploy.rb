@@ -3,7 +3,7 @@ $:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory
 require "rvm/capistrano"                  # Load RVM's capistrano plugin.
 set :rvm_ruby_string, '1.9.2'        # Or whatever env you want it to run in.
 set :application, "13nian"
-set :repository,  "git@13nian.com:/opt/git/compass.git"
+set :repository,  "git@oo-oo.me:/opt/git/compass.git"
 set :use_sudo, false
 
 #set :template_dir, "foo/bar"
@@ -15,7 +15,7 @@ set :scm_passphrase, "dogdogdoggg"
 set :branch, "master"
 set :deploy_via, :remote_cache
 set :deploy_to, "/var/www/13nian"
-server "13nian.com", :app, :web, :db, :primary => true
+server "oo-oo.me", :app, :web, :db, :primary => true
 
 unless Capistrano::Configuration.respond_to?(:instance)
   abort "This extension requires Capistrano 2"
