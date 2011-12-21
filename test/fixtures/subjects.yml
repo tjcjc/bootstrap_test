@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  parent_id: 1
+  articles_count: 1
+  users_count: 1
+
+two:
+  name: MyString
+  parent_id: 1
+  articles_count: 1
+  users_count: 1

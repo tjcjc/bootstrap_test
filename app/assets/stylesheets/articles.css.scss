@@ -21,16 +21,21 @@
     }
   }
 
-  h4.byline a{
-    color:#88A81A;
-    font-weight:bold;
-  }
+  h4.byline{
+    margin:0.2em 0;
+  a{
+      color:#88A81A;
+      font-weight:bold;
+    }
+
+}
   p{
     text-align:left;
-    margin:0.5em 0 1.5em;
+    margin:0.7em 0 1.5em;
     font-size:0.88em;
     text-indent:2em;
     line-height:1.5em;
+    color:#333;
   }
   blockquote.style1 {
     font: 14px/20px italic Times, serif;
@@ -38,7 +43,7 @@
     background-color: lighten(#faebbc, 15%);
     border-top: 1px solid #e1cc89;
     border-bottom: 1px solid #e1cc89;
-    margin: 5px 0;
+    margin: 10px 0;
     background-image: url(openquote1.gif);
     background-position: top left;
     background-repeat: no-repeat;
@@ -49,5 +54,20 @@
       background-image: url(closequote1.gif);
       background-repeat: no-repeat;
       background-position: bottom right;
+  }
+}
+#content{
+  text-align:center;
+}
+#metastuff {
+text-align: center;
+font: 14px Georgia, serif;
+padding: 0.75em 0 0.5em;
+margin: 0.25em 0 0.5em;
+background: #F8F7EF;
+border: 1px dashed #B2B2B2;
+border-width: 1px 0;
+a{
+    color:#88A81A;
   }
 }

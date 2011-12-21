@@ -14,6 +14,9 @@
 @include blueprint-scaffolding;
 @include blueprint-ie;
 @include blueprint-form;
+p + p{
+  margin-top:0.5em;
+}
 button{
   @include button-button;
   @include button-colors;

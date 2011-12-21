@@ -1,13 +1,18 @@
 <h2>Sign up</h2>
 
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:multipart => true}) do |f| %>
   <%= f.error_notification %>
 
   <div class="inputs">
-    <%= f.input :name, :required => true, :autofocus => true %>
-    <%= f.input :email, :required => true%>
-    <%= f.input :password, :required => true %>
-    <%= f.input :password_confirmation, :required => true %>
+    <%= f.input :name, :required => true, :autofocus => true, :label => "昵称:" %>
+    <%= f.input :email, :required => true, :label => "邮箱:"%>
+    <%= f.label :subject_id, "subject" %>
+    <%= f.input :password, :required => false, :label => "新密码:" %>
+    <%= f.input :password_confirmation, :required => false, :label => "确认新密码:"%>
+    <div class="input">
+    <%= f.label :subject_id, "专业:" %>
+    <%= f.select :subject_id, grouped_options_for_select(Subject.cache_base_subject, resource.subject_id),{}, :style => "width:312px;height:28px;border-color:#666;"%>
+    </div>
   </div>
 
   <div class="actions">
@@ -18,3 +23,7 @@
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
+javascript:
+  $(function(){
+    $("#user_subject_id").chosen();
+  });

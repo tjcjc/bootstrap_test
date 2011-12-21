@@ -2,9 +2,9 @@ DOCTYPE html
 html
   head
     title Compass
-    = stylesheet_link_tag    "application" 
-    = javascript_include_tag "application" 
-    = csrf_meta_tags 
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
   body{class=params[:controller]}
     ul#navbar
       .container
@@ -18,12 +18,10 @@ html
       span
     h1#masthead
       =link_to image_tag("alalogo.gif"), root_url
-    = yield 
+    = yield
     #footer
       p
         span.issn
           |ISSN:0724
         span.copyright
           |2008-2011 @xiaofushi
-          
-

@@ -6,5 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require tiny_mce
 //= require jquery.tinymce
+//= require chosen.jquery.min

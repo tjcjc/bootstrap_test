@@ -1,23 +1,41 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put , :multipart => true}) do |f| %>
   <%= f.error_notification %>
 
   <div class="inputs">
-    <%= f.input :name, :required => true, :autofocus => true %>
-    <%= f.input :email, :required => true%>
-    <%= f.input :password, :hint => "leave it blank if you don't want to change it", :required => false %>
-    <%= f.input :password_confirmation, :required => false %>
-    <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
+    <div class="container">
+    <div class="span-11 prepend-2">
+    <%= f.input :name, :required => true, :autofocus => true, :label => "昵称:" %>
+    <%= f.input :email, :required => true, :label => "邮箱:"%>
+    <%= f.input :password, :placeholder => "如果不修改密码，可以不填", :required => false, :label => "新密码:" %>
+    <%= f.input :password_confirmation, :required => false, :label => "确认新密码:"%>
+    <%= f.input :current_password, :placeholder => "输入密码，来认证你的操作", :required => true, :label => "当前密码:" %>
+    <div class="input">
+    <%= f.label :subject_id, "专业:" %>
+    <%= f.select :subject_id, grouped_options_for_select(Subject.cache_base_subject, resource.subject_id),{}, :style => "width:262px;height:28px;border-color:#666;margin-left:20px;"%>
+    </div>
+  </div>
+  <div class="span-8 append-2 last">
+    <% unless resource.avatar.blank? %>
+      <%= image_tag(resource.avatar_url) %>
+    <% end %>
+    <%= f.input :avatar, :as => :file, :label => "头像:" %>
+  </div>
+  </div>
   </div>
 
-  <div class="actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
+  <div class="container">
+    <div class="span-11 prepend-2">
+      <div class="actions">
+        <%= f.button :submit, "Update" %>
+      </div>
+    </div>
+    <div class="span-8 append-2 last">
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
 
 <%= link_to "Back", :back %>
+    </div>
+  </div>
+<% end %>
+

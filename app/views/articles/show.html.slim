@@ -1,12 +1,22 @@
-.container
-  .span-16.colborder
-    h1.alt= @article.title
+.container#main
+  .span-13.colborder#content.prepend-3.item
+    h2.ishinfo
+      span.ishdata=@article.created_at.strftime("%Y年 %m月 %d日")
+    h3.title= link_to @article.title, article_url(@article)
+    h4.byline
+      |by
+      = link_to @article.user_name, user_url(@article.user)
+    ul#metastuff
+      |所属专业
+      =link_to "aa", article_url(@aricle)
+      | ,
+      =link_to "use", user_url(@article.user)
     .content.page
       ==@article.content
     = link_to 'Edit', edit_article_path(@article)
     '|
     = link_to 'Back', articles_path
-  .span-7.last
+  .span-4.last.append-3
     h2 Digest
     =@article.digest
 

@@ -9,6 +9,10 @@ gem 'rails', '3.1.3'
 
 gem 'sqlite3'
 gem 'mysql2'
+gem 'carrierwave'
+gem 'acts_as_tree'
+gem 'redis-store'
+gem 'rails_best_practices'
 
 
 # Gems used only for assets and not required
@@ -17,13 +21,14 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
-  gem 'compass'
+  gem 'compass', "0.12.alpha.2"
+  gem 'twitter-bootstrap-rails'
 end
 
 gem 'jquery-rails', "1.0.19"
 gem 'slim-rails'
-gem 'simple_form'
-gem 'devise'
+gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
+gem 'devise', "1.5.3"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

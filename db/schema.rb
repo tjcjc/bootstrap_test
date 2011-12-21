@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111211065351) do
+ActiveRecord::Schema.define(:version => 20111212072837) do
 
   create_table "articles", :force => true do |t|
     t.integer  "user_id"
@@ -21,7 +21,25 @@ ActiveRecord::Schema.define(:version => 20111211065351) do
     t.string   "digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
+    t.integer  "subject_id"
   end
+
+  add_index "articles", ["subject_id"], :name => "index_articles_on_subject_id"
+  add_index "articles", ["user_id"], :name => "index_articles_on_user_id"
+
+  create_table "subjects", :force => true do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.integer  "articles_count",                :default => 0
+    t.integer  "users_count",                   :default => 0
+    t.string   "info",           :limit => 200
+    t.string   "preface",        :limit => 500
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "subjects", ["parent_id"], :name => "index_subjects_on_parent_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -37,9 +55,12 @@ ActiveRecord::Schema.define(:version => 20111211065351) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "avatar"
+    t.integer  "subject_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["subject_id"], :name => "index_users_on_subject_id"
 
 end
